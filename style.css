@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url("Images/img3.jpg"); /* Dark purple background */
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.main-container {
+    width: 600px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition-duration: 0.3s
+}
+
+/* Header */
+.header {
+    background-color: #392bd3; /* Purple header */
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+}
+
+.add-btn {
+    position: absolute;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    color: #5d2a8f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.3s;
+}
+
+/* Task Rows */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    transition: all 0.7s ease-out;
+}
+.task-item:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.task-item.completed {
+    background-color: #90ee90; /* Light green for highlighted task */
+}
+
+/* Actions (Buttons on the left) */
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.btn:active{
+    transform: scale(0.9)!important;
+}
+.btn:hover,
+.add-btn:hover{
+    transform: scale(1.1);
+}
+.edit { background-color: #4c63d2; }
+.edit:hover { background-color: #3547a2; }
+.notdone { background-color: #008000; }
+.done { background-color: #ff0000; }
+.notdone:hover { background-color: #015b01; }
+.cancel { background-color: #800080; }
+.cancel:hover { background-color: #510051; }
+.delete { background-color: #8b0000; }
+.delete:hover { background-color: #5c0000; }
+
+/* Task Text (Info on the right) */
+.task-info {
+    text-align: right;
+}
+
+.task-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.task-info p {
+    font-size: 0.8rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+.removing {
+    padding: 0px;
+    opacity: 0;
+    transform: translateX(50px); /* انزلاق لليمين */
+    margin-top: -62.9px; 
+}
+.task-item.done{
+    background-color: slategrey;
+    border: 2px solid green;
+    margin: 0px;
+}
+.task-item.done:hover{
+    transform: scale(1);
+}
+.task-item.done h3{
+    text-decoration: line-through;
+    color: #008000;
+}
